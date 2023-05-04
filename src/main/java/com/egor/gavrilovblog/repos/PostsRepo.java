@@ -1,8 +1,7 @@
 package com.egor.gavrilovblog.repos;
 
 import com.egor.gavrilovblog.entities.Posts;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PostsRepo extends PagingAndSortingRepository<Posts, Long> {
-    Posts findById(long id);
+public interface PostsRepo extends JpaRepository<Posts, Long> {
 }
