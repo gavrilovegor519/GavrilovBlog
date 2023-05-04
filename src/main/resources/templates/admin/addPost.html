@@ -17,18 +17,18 @@
 </header>
 <main>
     <section class="d-flex p-2 flex-column align-items-center">
-        <h1 th:inline="text">Hello <span th:remove="tag" sec:authentication="name">user</span>!</h1>
+        <h1 th:inline="text" class="mb-4">Hello <span th:remove="tag" sec:authentication="name">user</span>!</h1>
         <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
+            <input type="submit" class="bg-primary text-light rounded mb-3" value="Sign Out"/>
         </form>
         <form method="post" th:action="@{/admin/publish}">
             <div><label for="title">Title:</label></div>
-            <input id="title" type="text" name="title" />
+            <input id="title" class="rounded mb-3" type="text" name="title" />
 
             <div><label for="text">Text:</label></div>
-            <textarea id="text" name="text"></textarea>
+            <textarea id="text" class="rounded mb-3" name="text"></textarea>
 
-            <div><input type="submit" class="bg-primary text-light" value="Publish"/></div>
+            <div><input type="submit" class="bg-primary text-light rounded mb-3" value="Publish"/></div>
         </form>
     </section>
 </main>

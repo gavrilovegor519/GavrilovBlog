@@ -16,16 +16,16 @@
 </header>
 <main>
     <section class="d-flex p-2 flex-column align-items-center">
-        <div th:if="${param.error}">
+        <div class="mb-3" th:if="${param.error}">
             Invalid username and password.
         </div>
-        <div th:if="${param.logout}">
+        <div class="mb-3" th:if="${param.logout}">
             You have been logged out.
         </div>
         <form th:action="@{/login}" method="post">
-            <div><label> User Name : <input type="text" name="username"/> </label></div>
-            <div><label> Password: <input type="password" name="password"/> </label></div>
-            <div><input type="submit" class="bg-primary text-light" value="Sign In"/></div>
+            <div><label> User Name : <input type="text" name="username" class="rounded mb-3"/> </label></div>
+            <div><label> Password: <input type="password" name="password" class="rounded mb-3"/> </label></div>
+            <div><input type="submit" class="bg-primary text-light rounded mb-3" value="Sign In"/></div>
         </form>
     </section>
 </main>
