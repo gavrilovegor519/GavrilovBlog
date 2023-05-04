@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>GavrilovBlog</title>
@@ -17,18 +16,16 @@
 </header>
 <main>
     <section class="d-flex p-2 flex-column align-items-center">
-        <h1 th:inline="text">Hello <span th:remove="tag" sec:authentication="name">user</span>!</h1>
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
-        <form method="post" th:action="@{/admin/publish}">
-            <div><label for="title">Title:</label></div>
-            <input id="title" type="text" name="title" />
-
-            <div><label for="text">Text:</label></div>
-            <textarea id="text" name="text"></textarea>
-
-            <div><input type="submit" class="bg-primary text-light" value="Publish"/></div>
+        <div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <form th:action="@{/login}" method="post">
+            <div><label> User Name : <input type="text" name="username"/> </label></div>
+            <div><label> Password: <input type="password" name="password"/> </label></div>
+            <div><input type="submit" class="bg-primary text-light" value="Sign In"/></div>
         </form>
     </section>
 </main>

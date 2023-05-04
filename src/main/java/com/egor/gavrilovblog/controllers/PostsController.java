@@ -21,6 +21,11 @@ public class PostsController {
         return "index";
     }
 
+    @GetMapping("/admin/login")
+    public String adminLogin(Model model) {
+        return "/admin/login";
+    }
+
     @GetMapping("/admin/addPost")
     public String addPost(Model model) {
         return "/admin/addPost";
