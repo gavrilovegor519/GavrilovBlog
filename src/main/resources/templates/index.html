@@ -17,6 +17,7 @@
 <main id="posts">
     <article class="d-flex p-2 flex-column align-items-center" th:each="p : ${posts}">
         <h2 class="title" th:text="${p.title}">Post Title</h2>
+        <p class="content" th:utext="${#dates.format(p.date, 'dd-MMM-yyyy')}">Post content</p>
         <p class="content" th:utext="${p.text}">Post content</p>
     </article>
 </main>
