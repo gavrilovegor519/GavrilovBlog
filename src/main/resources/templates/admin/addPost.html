@@ -20,16 +20,18 @@
     <section class="d-flex p-2 flex-column align-items-center">
         <h1 th:inline="text" class="mb-4">Hello <span th:remove="tag" sec:authentication="name">user</span>!</h1>
         <form th:action="@{/logout}" method="post">
-            <input type="submit" class="bg-primary text-light rounded mb-3" value="Sign Out"/>
+            <button type="submit" class="btn btn-primary">Logout</button>
         </form>
         <form method="post" th:action="@{/admin/publish}">
-            <div><label for="title">Title:</label></div>
-            <input id="title" class="rounded mb-3" type="text" name="title"/>
-
-            <div><label for="text">Text:</label></div>
-            <textarea id="text" class="rounded mb-3" name="text"></textarea>
-
-            <div><input type="submit" class="bg-primary text-light rounded mb-3" value="Publish"/></div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" class="form-control" id="title" name="title">
+            </div>
+            <div class="mb-3">
+                <label for="text" class="form-label">Text</label>
+                <textarea type="password" class="form-control" id="text" name="text"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Publish</button>
         </form>
     </section>
 </main>
