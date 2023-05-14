@@ -17,7 +17,7 @@ public class PostsController {
 
     @GetMapping("/")
     public String mainpage(Model model) {
-        model.addAttribute("posts", service.findAll());
+        model.addAttribute("posts", service.findLatest5());
         return "index";
     }
 
