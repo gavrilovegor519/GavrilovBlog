@@ -1,0 +1,57 @@
+POST http://localhost:8080/rest/publish
+Content-Type: application/json
+
+{
+  "title": "Hello, REST!",
+  "text": "Hello World!"
+}
+
+###
+
+POST http://localhost:8080/rest/publish
+Content-Type: application/json
+Authorization: Basic egor qwerty
+
+{
+  "title": "Hello, REST!",
+  "text": "Hello World!"
+}
+
+###
+
+GET http://localhost:8080/rest
+Accept: application/json
+
+###
+
+PUT http://localhost:8080/rest/modify/1
+Content-Type: application/json
+
+{
+  "title": "Hello, REST! (modified)",
+  "text": "Hello World! (modified)"
+}
+
+###
+
+PUT http://localhost:8080/rest/modify/1
+Content-Type: application/json
+Authorization: Basic egor qwerty
+
+{
+  "title": "Hello, REST! (modified)",
+  "text": "Hello World! (modified)"
+}
+
+###
+
+DELETE http://localhost:8080/rest/delete/1
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:8080/rest/delete/1
+Content-Type: application/json
+Authorization: Basic egor qwerty
+
+###

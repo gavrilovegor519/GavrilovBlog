@@ -8,7 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-@Transactional
 public interface PostsRepo extends JpaRepository<Posts, Long> {
     @Query("SELECT p FROM Posts p ORDER BY p.date DESC")
     List<Posts> findLatest5Posts(Pageable pageable);
