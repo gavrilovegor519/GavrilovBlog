@@ -26,4 +26,16 @@ public class PostsService {
     public Posts create(Posts posts) {
         return repo.save(posts);
     }
+
+    public void delete(long id) {
+        repo.deleteById(id);
+    }
+
+    public Posts modify(long id, Posts posts) {
+        Posts posts1 = repo.getById(id);
+        posts1.setText(posts.getText());
+        posts1.setTitle(posts.getTitle());
+        posts1.setDate(posts.getDate());
+        return repo.save(posts1);
+    }
 }

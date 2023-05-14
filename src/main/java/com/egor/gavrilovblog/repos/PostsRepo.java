@@ -10,4 +10,8 @@ import java.util.List;
 public interface PostsRepo extends JpaRepository<Posts, Long> {
     @Query("SELECT p FROM Posts p ORDER BY p.date DESC")
     List<Posts> findLatest5Posts(Pageable pageable);
+
+    void deleteById(long id);
+
+    Posts getById(long id);
 }
