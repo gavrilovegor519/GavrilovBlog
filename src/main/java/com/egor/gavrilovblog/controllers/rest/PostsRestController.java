@@ -2,17 +2,17 @@ package com.egor.gavrilovblog.controllers.rest;
 
 import com.egor.gavrilovblog.entities.Posts;
 import com.egor.gavrilovblog.service.PostsService;
+
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 public class PostsRestController {
     private final PostsService service;
-
-    public PostsRestController(PostsService service) {
-        this.service = service;
-    }
 
     @GetMapping("/rest")
     public List<Posts> all() {

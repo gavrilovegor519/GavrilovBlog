@@ -2,18 +2,18 @@ package com.egor.gavrilovblog.service;
 
 import com.egor.gavrilovblog.entities.Posts;
 import com.egor.gavrilovblog.repos.PostsRepo;
+
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class PostsService {
     private final PostsRepo repo;
-
-    public PostsService(PostsRepo repo) {
-        this.repo = repo;
-    }
 
     public List<Posts> findAll() {
         return repo.findAll();

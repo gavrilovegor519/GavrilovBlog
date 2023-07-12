@@ -2,18 +2,18 @@ package com.egor.gavrilovblog.controllers;
 
 import com.egor.gavrilovblog.entities.Posts;
 import com.egor.gavrilovblog.service.PostsService;
+
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
+@RequiredArgsConstructor
 public class PostsController {
     private final PostsService service;
-
-    public PostsController(PostsService service) {
-        this.service = service;
-    }
 
     @GetMapping("/")
     public String mainpage(Model model) {
